@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Weather Data</h1>
+    <p id="datacomeshere"></p>
+    <p id="cityname"></p>
+</body>
+
+<script>
+
+    // JAVASCRIPT SYCHRONOUS AND ASYNCHRONOUS
+
+    // function fetchData(callback) { 
+    //     setTimeout(() => {
+    //         callback("Data fetched")
+    //     }, 5000);
+    // }
+
+    // fetchData((data)=>{
+    //     console.log(data);
+    // })
+
+
+
+
+    // JAVASCRIPT PROMISES
+
+    // function fetchData() {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             const data = {
+    //                 name: "Saurabh",
+    //                 age: 20,
+    //                 email: null
+    //             };
+    //             // let data = null;
+    //             if (data) {
+    //                 resolve(data);
+    //             } else {
+    //                 reject("Error has occured");
+    //             }
+    //         }, 2000);
+    //     }
+    //     )
+    // }
+
+    // async function processData() {
+    //     try {
+    //         const data = await fetchData();  // synchronous
+    //         // console.log("hey");
+    //         // console.log(data);
+
+    //         if(data.email == null){
+    //             throw new Error("Email is null");
+    //         }
+    //         else if(data.name == null)
+    //         {
+    //             throw new Error("Name is null");
+    //         }
+    //         else{
+    //             console.log(data);
+    //         }
+    //     }
+    //     catch (error) {
+    //         console.log("inside catch");
+    //         console.log(error);
+    //     }
+    //     finally{
+    //         console.log("finally");
+    //     }
+    // }
+
+    // function processData() {
+    //     fetchData().then((data) => {
+    //         if (data.email == null) {
+    //             throw new Error("Email is null");
+    //         }
+    //         else if (data.name == null) {
+    //             throw new Error("Name is null");
+    //         }
+    //         else {
+    //             console.log(data);
+    //         }
+    //     }).catch((error) => {
+    //         console.log(error);
+    //     })
+    // }
+
+    // processData();
+
+
+
+    // function fetchData() {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             const data = {
+    //                 name: "Saurabh",
+    //                 age: 20,
+    //                 email: null
+    //             };
+    //             // let data = null;
+    //             if (data) {
+    //                 resolve(data);
+    //             } else {
+    //                 reject("Error has occured");
+    //             }
+    //         }, 2000);
+    //     }
+    //     )
+    // }
+
+    // async function processData() {
+    //     try {
+    //         const data = await fetchData();  // synchronous
+    //         // console.log("hey");
+    //         // console.log(data);
+
+    //         if (data.email == null) {
+    //             throw new Error("Email is null");
+    //         }
+    //         else if (data.name == null) {
+    //             throw new Error("Name is null");
+    //         }
+    //         else {
+    //             console.log(data);
+    //         }
+    //     }
+    //     catch (error) {
+    //         console.log("inside catch");
+    //         console.log(error);
+    //     }
+    //     finally {
+    //         console.log("finally");
+    //     }
+    // }
+
+
+
+    let datacomeshere = document.getElementById("datacomeshere");
+    let cityname = document.getElementById("cityname");
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=bhopal&appid=a5905030ca9c50c3a516d13d5fd3bd59')
+        .then(response => response.json())
+        .then(json => {
+            console.log(json.weather[0].main);
+            console.log(json.name);
+
+            datacomeshere.innerHTML = json.weather[0].main;
+            cityname.innerHTML = json.name;
+        })
+
+
+        // LEARN OOPS IN JAVASCRIPT
+</script>
+
+</html>

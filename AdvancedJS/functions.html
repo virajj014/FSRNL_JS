@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    // let a = 10 ;
+    // let b = 20 ;
+    // let c = 30 ;
+    // let d = 40 ;
+    // let e = 50 ;
+
+    // let sum1 = a + b ;
+    // let sum2 =  b + c ;
+    // let sum3 =c + d ;
+    // let sum4 = d + e ;
+
+    // function greet(value123){
+    //     console.log("Hello "+value123);
+    // }
+
+    // greet("harshal");
+    // greet("viraj");
+
+    // function multiply(a,b){
+    //     return a*b;
+    // }
+    // const multiply = (a=1000) => {
+    //     return a*2;
+    // };
+
+    // let result = multiply(12);
+    // console.log(result);
+
+
+    // function greetPerson(name = "Guest") {
+    //     console.log("Hello, " + name + "!");
+    // }
+    // greetPerson();
+    // greetPerson("Alice");
+
+
+    function sumNumbers(...numbers){
+        let total = 0;
+        console.log(numbers);
+        for(let number of numbers){
+            total += number;
+        }
+        return total;
+    }
+
+    let result = sumNumbers(1,2,3,4,5,6);
+    console.log(result);
+</script>
+
+</html>
